@@ -19,19 +19,20 @@
   words.appendChild(p);
 
   recogintion.addEventListener('result', e => {
-    const transcipt = Array.from(e.results)
+          
+    const transcript = Array.from(e.results)
       .map(result => result[0])
-      .map(result => result.transcipt)
+      .map(result => result.transcript) 
       .join('')
-    console.log('A');
-    p.textContent = transcipt;
-    console.log(transcipt);
+
+    p.textContent = transcript;
+    
     if(e.results[0].isFinal){
-      p = document.createElement(p);
+      p = document.createElement('p');
       words.appendChild(p);
     }
-    console.log('B');
-    // if(transcipt.includes('one')){
+    
+    // if(transcript.includes('one')){
     //   console.log('111111111111111');
     // }
 
